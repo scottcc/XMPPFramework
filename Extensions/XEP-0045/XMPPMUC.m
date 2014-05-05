@@ -98,13 +98,13 @@
 		// So we're going to postpone for a bit removing the roomJID from the list.
 		// This way the isMUCRoomElement will still remain accurate
 		// for presence elements that may arrive momentarily.
-		
-		double delayInSeconds = 30.0;
-		dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-		dispatch_after(popTime, moduleQueue, ^{ @autoreleasepool {
-			
+
+		// cB: https://github.com/robbiehanson/XMPPFramework/issues/350
+//		double delayInSeconds = 30.0;
+//		dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+//		dispatch_after(popTime, moduleQueue, ^{ @autoreleasepool {
 			[rooms removeObject:roomJID];
-		}});
+//		}});
 	}
 }
 
