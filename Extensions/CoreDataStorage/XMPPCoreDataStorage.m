@@ -8,6 +8,10 @@
 #import <objc/runtime.h>
 #import <libkern/OSAtomic.h>
 
+// SCC ADDED - not in our control and TOO MANY WARNINGS
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wimplicit-retain-self"
+
 #if ! __has_feature(objc_arc)
 #warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
@@ -1017,3 +1021,5 @@ static NSMutableSet *databaseFileNames;
 }
 
 @end
+
+#pragma clang diagnostic pop

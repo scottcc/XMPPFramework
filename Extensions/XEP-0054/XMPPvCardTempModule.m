@@ -6,6 +6,10 @@
 //  Copyright 2011 RF.com. All rights reserved.
 //
 
+// SCC ADDED - not in our control and TOO MANY WARNINGS
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wimplicit-retain-self"
+
 #import "XMPP.h"
 #import "XMPPLogging.h"
 #import "XMPPvCardTempModule.h"
@@ -286,3 +290,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

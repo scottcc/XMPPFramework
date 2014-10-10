@@ -6,6 +6,9 @@
 #import <mach/host_info.h>
 #import <libkern/OSAtomic.h>
 
+// SCC ADDED - not in our control and TOO MANY WARNINGS
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wimplicit-retain-self"
 
 /**
  * Welcome to Cocoa Lumberjack!
@@ -1081,3 +1084,5 @@ static char *dd_str_copy(const char *str)
 }
 
 @end
+
+#pragma clang diagnostic pop

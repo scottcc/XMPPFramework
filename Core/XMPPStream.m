@@ -8,6 +8,10 @@
 #import <objc/runtime.h>
 #import <libkern/OSAtomic.h>
 
+// SCC ADDED - not in our control and TOO MANY WARNINGS
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wimplicit-retain-self"
+
 #if TARGET_OS_IPHONE
   // Note: You may need to add the CFNetwork Framework to your project
   #import <CFNetwork/CFNetwork.h>
@@ -4573,3 +4577,5 @@ static const uint32_t receipt_success = 1 << 1;
 }
 
 @end
+
+#pragma clang diagnostic pop

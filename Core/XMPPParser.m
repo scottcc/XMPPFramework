@@ -3,6 +3,11 @@
 #import <libxml/parser.h>
 #import <libxml/parserInternals.h>
 
+// SCC ADDED - not in our control and TOO MANY WARNINGS
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wimplicit-retain-self"
+#pragma clang diagnostic ignored "-Wunused-variable"
+
 #if TARGET_OS_IPHONE
   #import "DDXMLPrivate.h"
 #endif
@@ -854,3 +859,5 @@ static void xmpp_xmlEndElement(void *ctx, const xmlChar *localname,
 }
 
 @end
+
+#pragma clang diagnostic pop

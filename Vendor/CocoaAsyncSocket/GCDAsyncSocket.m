@@ -8,6 +8,10 @@
 //  https://github.com/robbiehanson/CocoaAsyncSocket
 //
 
+// SCC ADDED - not in our control and TOO MANY WARNINGS
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wimplicit-retain-self"
+
 #import "GCDAsyncSocket.h"
 
 #if TARGET_OS_IPHONE
@@ -7407,3 +7411,5 @@ static void CFWriteStreamCallback (CFWriteStreamRef stream, CFStreamEventType ty
 }
 
 @end	
+
+#pragma clang diagnostic pop

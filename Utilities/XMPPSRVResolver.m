@@ -5,6 +5,10 @@
 //  Based on SRVResolver by Apple, Inc.
 //
 
+// SCC ADDED - not in our control and TOO MANY WARNINGS
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wimplicit-retain-self"
+
 #import "XMPPSRVResolver.h"
 #import "XMPPLogging.h"
 
@@ -681,3 +685,6 @@ static void QueryRecordCallback(DNSServiceRef       sdRef,
 }
 
 @end
+
+#pragma clang diagnostic pop
+
