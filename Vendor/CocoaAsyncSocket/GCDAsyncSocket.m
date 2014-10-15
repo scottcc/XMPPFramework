@@ -11,6 +11,8 @@
 // SCC ADDED - not in our control and TOO MANY WARNINGS
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wimplicit-retain-self"
+// NOTE - the warnings this gets around dont' affect ios/binnj.
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 #import "GCDAsyncSocket.h"
 
